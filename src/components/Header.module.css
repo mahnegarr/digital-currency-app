@@ -1,0 +1,12 @@
+.main {
+    color: #f72585;
+    border-bottom: 1px solid #f72585;
+    /* margin-top: -1rem; */
+    padding: 20px;
+    text-align: center;
+}
+
+h1{
+    text-shadow: 2px 2px 4px rgba(248, 136, 243, 0.521)
+    
+}
