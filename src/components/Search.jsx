@@ -6,7 +6,7 @@ import styles from "./Search.module.css"
 function Search({ crypto, setCrypto }) {
     const [text, setText] = useState("")
     const [coins, setCoins] = useState([])
-    const [isLoading,setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         const controller = new AbortController()
@@ -46,16 +46,16 @@ function Search({ crypto, setCrypto }) {
                 <option value="eur">EUR</option>
                 <option value="jpy">JPY</option>
             </select>
-
-            <div className={styles.searchResult}>
-                {isLoading && <RotatingLines width='50px' height="50px" strokeColor='#f72585' strokeWidth='2'/>}
+            {(!!coins.length || isLoading) && (<div className={styles.searchResult}>
+                {isLoading && <RotatingLines width='50px' height="50px" strokeColor='#f72585' strokeWidth='2' />}
                 <ul>
-                    {coins.map(coin=> <li key={coin.id} >
+                    {coins.map(coin => <li key={coin.id} >
                         <img src={coin.thumb} alt={coin.name} />
                         <p>{coin.name}</p>
                     </li>)}
                 </ul>
-            </div>
+            </div>)}
+
         </div>
     )
 }
