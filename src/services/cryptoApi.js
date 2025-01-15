@@ -10,3 +10,5 @@ const searchCoinList = (text)=>{
     return `${BASE_URL}/search?query=${text}&x_cg_demo_api_key=${API_KEY}`
 }
 export {getCoinList , searchCoinList}
+
+
