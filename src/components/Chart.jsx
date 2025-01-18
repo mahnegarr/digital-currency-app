@@ -5,7 +5,7 @@ import { convertData } from '../helpers/convertData';
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
 function Chart({ chart, setChart }) {
-  
+
   const [type, setType] = useState("prices")
 
 
@@ -19,6 +19,16 @@ function Chart({ chart, setChart }) {
         </div>
         <div className={styles.graph}>
           <ChartComponent data={convertData(chart, type)} type={type} />
+        </div>
+        <div className={styles.types}>
+          <button>Prices</button>
+          <button>Market Caps</button>
+          <button>Total Volumes</button>
+        </div>
+        <div className={styles.details}>
+          <div><p>Prices:<span>${chart.coin.current_price}</span></p></div>
+          <div><p>ATH:<span>${chart.coin.ath}</span></p></div>
+          <div><p>Market Cap:<span>${chart.coin.market_cap}</span></p></div>
         </div>
       </div>
     </div>
